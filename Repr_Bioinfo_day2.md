@@ -43,6 +43,9 @@ replacing `yourusername` with your UiO username.
 
 Follow these lesson episodes:
 
+NOTE If you are short on time, please skip the exercises,
+these are marked with a pencil symbol at the left of the title.
+
 * [Creating a Repository](https://swcarpentry.github.io/git-novice/03-create/index.html)
 * [Tracking Changes](https://swcarpentry.github.io/git-novice/04-changes/index.html)
 * [Exploring History](https://swcarpentry.github.io/git-novice/05-history/index.html)
