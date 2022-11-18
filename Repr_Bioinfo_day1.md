@@ -20,7 +20,7 @@ Log in to Saga if you haven't already:
 * commands in this document are prefixed with a dollar sign `$`,
   do not type that, only type what follows
 
-~~~
+~~~bash
 $ ssh uio-username@saga.sigma2.no
 ~~~
 
@@ -40,7 +40,7 @@ additional optional information which may be needed for the `verb`.
 Type the following, replacing the text in quotation marks
 with your own name and email address:
 
-~~~
+~~~bash
 $ git config --global user.name "Your Name"
 $ git config --global user.email "your@email.address"
 ~~~
@@ -59,7 +59,7 @@ If you are concerned about privacy, please review [GitHub's instructions for kee
 
 We will be using the basic text editor "nano", so let's git know about it:
 
-~~~
+~~~bash
 $ git config --global core.editor "nano -w"
 ~~~
 
@@ -68,7 +68,7 @@ Git (2.28+) allows configuration of the name of the branch created when you
 initialize any new repository.
 We wil use that feature to set it to `main` so it matches what GitHub uses:
 
-~~~
+~~~bash
 $ git config --global init.defaultBranch main
 ~~~
 
@@ -76,7 +76,7 @@ $ git config --global init.defaultBranch main
 Finally, we will later need this setting so that we don't have 
 to type a password every time we interact with GitHub:
 
-~~~
+~~~bash
 $ git config --global credential.helper store
 ~~~
 
@@ -86,7 +86,7 @@ to use the settings for every project, in your user account, on this computer.
 
 You can check your settings at any time:
 
-~~~
+~~~bash
 $ git config --list
 ~~~
 
@@ -128,7 +128,7 @@ We will only have to do it once.
 
 We will run the list command to check what key pairs already exist on your computer.
 
-~~~
+~~~bash
 ls -al ~/.ssh
 ~~~
 
@@ -161,7 +161,7 @@ When you see this, continue with the next section.
 To create an SSH key pair use this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key, 
 in our case, your email address:
 
-~~~
+~~~bash
 $ ssh-keygen -t ed25519 -C "your@email.address"
 ~~~
 
@@ -174,7 +174,7 @@ Enter file in which to save the key (/cluster/home/your_username/.ssh/id_ed25519
 
 We want to use the default file, so just press **Enter**.
 
-~~~
+~~~bash
 Created directory '/cluster/home/your_username/.ssh'.
 Enter passphrase (empty for no passphrase):
 ~~~
@@ -185,7 +185,7 @@ Since we are using an account on Saga that only we have access to,
 we can skip creating a passphrase.
 If you decide to do it anyways, be sure to use something memorable or save your passphrase somewhere, as there is no "reset my passphrase" option. 
 
-~~~
+~~~bash
 Enter same passphrase again:
 ~~~
 
@@ -217,7 +217,7 @@ is a shorter version of a public key.
 
 Now that we have generated the SSH keys, we will find the SSH files when we check.
 
-~~~
+~~~bash
 $ ls -al ~/.ssh
 ~~~
 
@@ -233,7 +233,7 @@ drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
 ### 3.2 Copy the public key to GitHub
 Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.  
 
-~~~
+~~~bash
 $ ssh -T git@github.com
 ~~~
 
@@ -264,7 +264,7 @@ First, we need to copy the public key.
 Be sure to include the `.pub` at the end,
 otherwise you’re looking at the private key. 
 
-~~~
+~~~bash
 $ cat ~/.ssh/id_ed25519.pub
 ~~~
 
@@ -285,7 +285,7 @@ paste your SSH key into the field, and click the "Add SSH key" to complete the s
 
 Now that we’ve set that up, let’s check our authentication again from the command line. 
 
-~~~
+~~~bash
 $ ssh -T git@github.com
 ~~~
 

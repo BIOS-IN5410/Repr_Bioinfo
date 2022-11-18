@@ -47,6 +47,9 @@ NOTE If you are short on time, please skip the exercises,
 these are marked with a pencil symbol at the left of the title.
 
 * [Creating a Repository](https://swcarpentry.github.io/git-novice/03-create/index.html)
+  * NOTE here you are asked to make a folder on your Desktop, but we don't have that on Saga.
+  Use `/cluster/home/yourusername/BIOS-IN5410` instead
+(replacing `yourusername` with your UiO username).
 * [Tracking Changes](https://swcarpentry.github.io/git-novice/04-changes/index.html)
 * [Exploring History](https://swcarpentry.github.io/git-novice/05-history/index.html)
 * [Ignoring Things](https://swcarpentry.github.io/git-novice/06-ignore/index.html)
