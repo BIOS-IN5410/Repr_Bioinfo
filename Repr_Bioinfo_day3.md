@@ -7,8 +7,7 @@ For this part, you will again be using Saga, not your own computer.
 First, we need to do something on GitHub because
 no longer accepts passwwords.
 
-Follow the instructions on this page:
-https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic
+Follow [these instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic).
 
 <!-- H22 We may need this...
 
@@ -24,14 +23,15 @@ $ git config --global credential.helper store
 
 -->
 
+
+## Repository on GitHub
+
 We will again follow some lesson episodes:
 
-FIXME: bruk modulke load git/
+<!-- FIXME: bruk modulke load git/ -->
 
 NOTE If you are short on time, please skip the exercises,
 these are marked with a pencil symbol at the left of the title.
-
-## Repository on GitHub
 
 * [Remotes in GitHub](https://swcarpentry.github.io/git-novice/07-github/index.html)
 
