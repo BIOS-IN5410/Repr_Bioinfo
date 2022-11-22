@@ -49,3 +49,6 @@ Your teachers will suggest a change to the file `mars.txt` in your repository. P
 
 * Add a link to your GitHub repository to this [Google Sheet](https://docs.google.com/spreadsheets/d/11MCUPoohlS76hDFWzwdO_mlhsT0NuJpGsIWoCHXhSvo/edit?usp=sharing).
 * Keep an eye on your email
+* Find out what change the teacher has proposed
+* Accept the change by Merging the Pull Request
+* Synchronize the repository to Saga and inspect your file(s)
