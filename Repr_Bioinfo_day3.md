@@ -2,6 +2,14 @@
 
 For this part, you will again be using Saga, not your own computer.
 
+## More housekeeping
+
+First, we need to do something on GitHub because
+no longer accepts passwwords.
+
+Follow the instructions on this page:
+https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic
+
 <!-- H22 We may need this...
 
 ## More housekeeping
@@ -16,7 +24,9 @@ $ git config --global credential.helper store
 
 -->
 
-We will agaimn foloow some lesson episodes:
+We will again follow some lesson episodes:
+
+FIXME: bruk modulke load git/
 
 NOTE If you are short on time, please skip the exercises,
 these are marked with a pencil symbol at the left of the title.
