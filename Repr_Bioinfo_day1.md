@@ -3,11 +3,11 @@
 Today we will do some 'housekeeping'.
 We need to do several steps to prepare for the rest of this module.
 
-## `git` on Saga
+## `git` on Fox
 
 As part of BIOS-IN5410/9410, we will be using the so-called
 version control software `git`.
-This program is installed already on Saga, but we will need 
+This program is installed already on Fox, but we will need 
 to set it up for us before we start using it.
 
 >These commands we will only have to run once.
@@ -15,13 +15,13 @@ Learning how to use git comes later in the course.
 
 ## Log in
 
-Log in to Saga if you haven't already:
-* replace uio-username with your uio username
+Log in to Educloud Fox Compute Cluster if you haven't already:
+* replace ec-username with your Educloud username
 * commands in this document are prefixed with a dollar sign `$`,
   do not type that, only type what follows
 
 ~~~bash
-$ ssh uio-username@saga.sigma2.no
+$ ssh ec-username@fox.educloud.no
 ~~~
 
 ## Tell `git` about us
@@ -64,7 +64,7 @@ $ git config --global core.editor "nano -w"
 ~~~
 
 
-Git (2.28+) allows configuration of the name of the branch created when you
+Git (starting with version 2.28) allows configuration of the name of the branch created when you
 initialize any new repository.
 We wil use that feature to set it to `main` so it matches what GitHub uses:
 
@@ -72,13 +72,12 @@ We wil use that feature to set it to `main` so it matches what GitHub uses:
 $ git config --global init.defaultBranch main
 ~~~
 
-
-Finally, we will later need this setting so that we don't have 
-to type a password every time we interact with GitHub:
+Finally, we will set up how git behaves when it interacts with GitHub.
 
 ~~~bash
-$ git config --global credential.helper store
+$ git config --global pull.rebase false
 ~~~
+
 
 The commands we just ran above only need to be run once:
 the flag `--global` tells Git
@@ -98,7 +97,7 @@ same commands to choose another editor or update your email address.
 We will be using the could service for version control GitHub for sharing what we have under version control
 with eacho other, and/or the world.
 For this, you will need an account on GitHub,
-and enable Saga to communicte with GitHub's servers.
+and enable Fox to communicte with GitHub's servers.
 
 ### Create an account on GitHub
 
@@ -106,14 +105,14 @@ and enable Saga to communicte with GitHub's servers.
   and create an account.
 * If you have an account already, make sure you can log into it.
 * Make sure the email address used is be the same as the one you used
-  when setting up your git on saga, above.
+  when setting up your git on Fox, above.
   If necessary, run the `git config --global user.email "your@email.address"`
   again.
 
 
-### Enabling git on saga to communicate with Github.com
+### Enabling git on Fox (Educloud) to communicate with Github.com
 
-We need to set up a way for Saga to authenticate with GitHub so it knows it’s 
+We need to set up a way for Fox to authenticate with GitHub so it knows it’s 
 us trying to connect to it.
 
 We are going to set up the method that is commonly used by many different services to authenticate access on the command line.  This method is called Secure Shell Protocol (SSH).  SSH is a cryptographic network protocol that allows secure communication between computers using an otherwise insecure network.  
@@ -135,10 +134,10 @@ ls -al ~/.ssh
 
 Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using. 
 
-* If you have not set up SSH on Saga, the output is 
+* If you have not set up SSH on Fox, the output is 
 
 ~~~
-ls: cannot access '/cluster/home/your_username/.ssh': No such file or directory
+ls: cannot access '/fp/homes01/u01/ec-username/.ssh': No such file or directory
 ~~~
 
 When you see this, continue with the next section.
@@ -154,7 +153,7 @@ drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
 When you see this, continue with the next section.
 
 
-* If you have already set up SSH on Saga, the output will list the public and private key pairs. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up. This means you can skip the enxt secion and go directly to **"Copy the public key to GitHub"** below.
+* If you have already set up SSH on Fox, the output will list the public and private key pairs. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up. This means you can skip the enxt secion and go directly to **"Copy the public key to GitHub"** below.
 
 
 ### 3.1 Create an SSH key pair
@@ -168,20 +167,20 @@ $ ssh-keygen -t ed25519 -C "your@email.address"
 
 ~~~
 Generating public/private ed25519 key pair.
-Enter file in which to save the key (/cluster/home/your_username/.ssh/id_ed25519):
+Enter file in which to save the key (/fp/homes01/u01/ec-username/.ssh/id_ed25519):
 ~~~
 
 
 We want to use the default file, so just press **Enter**.
 
 ~~~bash
-Created directory '/cluster/home/your_username/.ssh'.
+Created directory '/fp/homes01/u01/ec-username/.ssh'.
 Enter passphrase (empty for no passphrase):
 ~~~
 
 
 Now, it is prompting us for a passphrase.
-Since we are using an account on Saga that only we have access to,
+Since we are using an account on Fox that only we have access to,
 we can skip creating a passphrase.
 If you decide to do it anyways, be sure to use something memorable or save your passphrase somewhere, as there is no "reset my passphrase" option. 
 
@@ -193,8 +192,8 @@ Enter same passphrase again:
 After entering the same passphrase a second time, we receive the confirmation
 
 ~~~
-Your identification has been saved in /cluster/home/your_username/.ssh/id_ed25519
-Your public key has been saved in /cluster/home/your_username/.ssh/id_ed25519.pub
+Your identification has been saved in /fp/homes01/u01/ec-username/.ssh/id_ed25519
+Your public key has been saved in /fp/homes01/u01/ec-username/.ssh/id_ed25519.pub
 The key fingerprint is:
 SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o your@email.address
 The key's randomart image is:
@@ -257,7 +256,7 @@ Permission denied (publickkey)
 
 This is fine, we'll fix this in the next step.
 
-Now Saga knows we trust github.com as a server.
+Now Fox knows we trust github.com as a server.
 But we still need to give GitHub our public key.
 
 First, we need to copy the public key.
@@ -279,7 +278,7 @@ Now, going to GitHub.com, click on your profile icon in the top right corner to 
 Click "Settings," then on the  settings page, click "SSH and GPG keys,"
 on the left side "Account settings" menu.  
 Click the "New SSH key" button on the right side.
-Now, you can add the title, for example `saga.sigma2.no`
+Now, you can add the title, for example `Fox.sigma2.no`
 so we can remember where the original key pair files are located,
 paste your SSH key into the field, and click the "Add SSH key" to complete the setup.
 
