@@ -1,40 +1,32 @@
 # Reproducible Bioinformatics Analysis day 2
 
 For this part, you will be using Fox, not your own computer.
+After logging in to Fox, choose on of the `int-` nodes
+and log in to that.
 
 
 ## Using git on Fox
 
-The program we will use, `git`, is installed on Fox and available after you
-log in.
+<!-- FIXME NEXT TIME edit to only load the module-->
 
-<!-- However, we wil be using a *newer version*. 
-Using (different versions of) software on Fox is done using the so-called 
-`module` system.
-We will be using this system throughout the course
-to activiate per-installed software we need. -->
+The program we will use, `git`, is installed on Fox login nodes,
+but not on the compute nodes.
 
-After logging in to Fox, use this command to see which versions of 
-`git` is the default version:
+Use this command to see which versions of `git` are installed:
 
 ```
-$ git --version
-```
-<!-- 
-Then, use this command to see which versions of `git` are installed:
-
-```
-$ module avail git
+module avail git
 ```
 
-We will use version 2.36.0. To activate it, type:
+Choose the latest version.
+At the time of writing this, the latest version is 2.38.1.
+To activate it, type:
 
 ```
-$ module load git/2.36.0-GCCcore-11.3.0-nodocs
+module load git/2.38.1-GCCcore-12.2.0-nodocs
 ```
 
-Now run `git --version` again to verify.
- -->
+Now run `git --version` to verify that you have access to `git`.
 
 ## Where to do the work
 

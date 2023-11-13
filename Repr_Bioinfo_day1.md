@@ -3,48 +3,66 @@
 Today we will do some 'housekeeping'.
 We need to do several steps to prepare for the rest of this module.
 
-## `git` on Fox
-
-As part of BIOS-IN5410/9410, we will be using the so-called
-version control software `git`.
-This program is installed already on Fox, but we will need 
-to set it up for us before we start using it.
-
->These commands we will only have to run once.
-Learning how to use git comes later in the course.
-
 ## Log in
 
 Log in to Educloud Fox Compute Cluster if you haven't already:
 * replace ec-username with your Educloud username
-* commands in this document are prefixed with a dollar sign `$`,
-  do not type that, only type what follows
 
 ~~~bash
-$ ssh ec-username@fox.educloud.no
+ssh ec-username@fox.educloud.no
 ~~~
+
+
+After logging in to Fox, choose on of the `int-` nodes
+and log in to that.
+
+
+## Using git on Fox
+
+As part of BIOS-IN5410/9410, we will be using the so-called
+version control software `git`.
+This program is not installed by default on the compute nodes.
+
+Use this command to see which versions of `git` are installed:
+
+```
+module avail git
+```
+
+Choose the latest version.
+At the time of writing this, the latest version is 2.38.1.
+To be able to use it, type:
+
+```
+module load git/2.38.1-GCCcore-12.2.0-nodocs
+```
+
+Now run `git --version` to verify that you have access to `git`.
+
 
 ## Tell `git` about us
 
 When we use `git` on a new computer for the first time,
-we need to configure a few things. Below are a few examples
-of configurations we will set as we get started with Git:
+we need to configure a few things. 
+This we only need to do once.
 
-*   our name and email address,
-*   what our preferred text editor is,
-*   and that we want to use these settings globally (i.e. for every project).
+Below are a few examples of configurations we will set as we get started with Git:
+
+* our name and email address,
+* what our preferred text editor is,
+* and that we want to use these settings globally (i.e. for every project).
 
 On a command line, Git commands are written as `git verb options`,
 where `verb` is what we actually want to doand `options` is
 additional optional information which may be needed for the `verb`.
 Type the following, replacing the text in quotation marks
-with your own name and email address:
+with your own name and email address
+(note that you will not see any output from these commands):
 
 ~~~bash
-$ git config --global user.name "Your Name"
-$ git config --global user.email "your@email.address"
+git config --global user.name "Your Name"
+git config --global user.email "your@email.address"
 ~~~
-
 
 This user name and email will be associated with your subsequent Git activity.
 
@@ -60,7 +78,7 @@ If you are concerned about privacy, please review [GitHub's instructions for kee
 We will be using the basic text editor "nano", so let's git know about it:
 
 ~~~bash
-$ git config --global core.editor "nano -w"
+git config --global core.editor "nano -w"
 ~~~
 
 
@@ -69,13 +87,13 @@ initialize any new repository.
 We wil use that feature to set it to `main` so it matches what GitHub uses:
 
 ~~~bash
-$ git config --global init.defaultBranch main
+git config --global init.defaultBranch main
 ~~~
 
 Finally, we will set up how git behaves when it interacts with GitHub.
 
 ~~~bash
-$ git config --global pull.rebase false
+git config --global pull.rebase false
 ~~~
 
 
@@ -86,7 +104,7 @@ to use the settings for every project, in your user account, on this computer.
 You can check your settings at any time:
 
 ~~~bash
-$ git config --list
+git config --list
 ~~~
 
 You can change your configuration as many times as you want: use the
@@ -156,12 +174,12 @@ When you see this, continue with the next section.
 * If you have already set up SSH on Fox, the output will list the public and private key pairs. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up. This means you can skip the enxt secion and go directly to **"Copy the public key to GitHub"** below.
 
 
-### 3.1 Create an SSH key pair
+### Create an SSH key pair
 To create an SSH key pair use this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key, 
 in our case, your email address:
 
 ~~~bash
-$ ssh-keygen -t ed25519 -C "your@email.address"
+ssh-keygen -t ed25519 -C "your@email.address"
 ~~~
 
 
@@ -217,7 +235,7 @@ is a shorter version of a public key.
 Now that we have generated the SSH keys, we will find the SSH files when we check.
 
 ~~~bash
-$ ls -al ~/.ssh
+ls -al ~/.ssh
 ~~~
 
 
@@ -229,11 +247,11 @@ drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
 ~~~
 
 
-### 3.2 Copy the public key to GitHub
+### Copy the public key to GitHub
 Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.  
 
 ~~~bash
-$ ssh -T git@github.com
+ssh -T git@github.com
 ~~~
 
 If you have never done this before, you'll likely see this message:
@@ -264,7 +282,7 @@ Be sure to include the `.pub` at the end,
 otherwise you’re looking at the private key. 
 
 ~~~bash
-$ cat ~/.ssh/id_ed25519.pub
+cat ~/.ssh/id_ed25519.pub
 ~~~
 
 The output will look something like this:
@@ -274,18 +292,21 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI
 ~~~
 
 
-Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu.  
-Click "Settings," then on the  settings page, click "SSH and GPG keys,"
-on the left side "Account settings" menu.  
-Click the "New SSH key" button on the right side.
-Now, you can add the title, for example `Fox.sigma2.no`
-so we can remember where the original key pair files are located,
-paste your SSH key into the field, and click the "Add SSH key" to complete the setup.
+Now, on GitHub.com do the following:
+
+* Click on your profile icon in the top right corner to get the drop-down menu.  
+* Click "Settings," then on the  settings page, click "SSH and GPG keys,"
+  on the left side "Account settings" menu.  
+* Click the "New SSH key" button on the right side.
+* Now, you can add a title, for example `Fox.sigma2.no`
+  so we can remember where the original key pair files are located
+* Paste your SSH key into the field
+* Click the "Add SSH key" to complete the setup.
 
 Now that we’ve set that up, let’s check our authentication again from the command line. 
 
 ~~~bash
-$ ssh -T git@github.com
+ssh -T git@github.com
 ~~~
 
 You should now see this message:
