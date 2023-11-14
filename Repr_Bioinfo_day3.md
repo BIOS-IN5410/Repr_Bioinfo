@@ -12,6 +12,9 @@ Follow [these instructions](https://docs.github.com/en/authentication/keeping-yo
 
 -->
 
+Remember to enable the use of the `git` command on Fox
+by using `module load git/#.#.#...` as you did previously.
+
 
 ## Repository on GitHub
 
