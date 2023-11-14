@@ -28,6 +28,19 @@ module load git/2.38.1-GCCcore-12.2.0-nodocs
 
 Now run `git --version` to verify that you have access to `git`.
 
+## A quick check
+
+Run this command:
+
+```
+git config --list
+```
+
+It should give several lines of output.
+If there is no output,
+**you have to first follow the instructions for [Day 1](Repr_Bioinfo_day1.md) of this module**
+before you continue.
+
 ## Where to do the work
 
 Start working in a folder such as `/fp/homes01/u01/ec-username/BIOS-IN5410`
