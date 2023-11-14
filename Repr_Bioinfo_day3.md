@@ -24,7 +24,7 @@ We will again follow some lesson episodes:
 2. If you are short on time, please skip the exercises,
   these are marked with a pencil symbol at the left of the title.
 
-* [Remotes in GitHub](https://swcarpentry.github.io/git-novice/07-github/index.html)
+* [Remotes in GitHub](https://swcarpentry.github.io/git-novice/07-github.html)
 
 ~~~diff
 ! The section "3. SSH Background and Setup" should be skipped as we did this on day 1.
@@ -38,9 +38,9 @@ For the next part, pair up with someone at your table. You should agree on roles
 
 Follow these episodes
 
-* [Collaborating](https://swcarpentry.github.io/git-novice/08-collab/index.html)
+* [Collaborating](https://swcarpentry.github.io/git-novice/08-collab.html)
   * SKIP the exercise `Switch Roles and Repeat`
-* [Conflicts](https://swcarpentry.github.io/git-novice/09-conflict/index.html)
+* [Conflicts](https://swcarpentry.github.io/git-novice/09-conflict.html)
 
 ## Other ways to collaborate
 
