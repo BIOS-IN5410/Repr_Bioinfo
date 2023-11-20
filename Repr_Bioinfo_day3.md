@@ -33,6 +33,14 @@ We will again follow some lesson episodes:
 ! The section "3. SSH Background and Setup" should be skipped as we did this on day 1.
 ~~~
 
+## Syncing last week's work to GitHub
+
+Last week you committed a few SLURM scripts to version control.
+
+* Make a new GitHub repository
+* Add it as a remote to your version control folder on Fox
+* Push the commits from it to your new repository on GitHub
+
 ## Pairing up
 
 For the next part, pair up with someone at your table. You should agree on roles:
