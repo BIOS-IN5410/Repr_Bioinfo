@@ -22,16 +22,15 @@ We will again follow some lesson episodes:
 
 **NOTEs**
 
-1. Use the `planets` folder you made last time, 
-  with the file `mars.txt`, for this lesson also.
+1. Use the `recipes` folder you made last time for this lesson also.
 2. If you are short on time, please skip the exercises,
   these are marked with a pencil symbol at the left of the title.
-
-* [Remotes in GitHub](https://swcarpentry.github.io/git-novice/07-github.html)
 
 ~~~diff
 ! The section "3. SSH Background and Setup" should be skipped as we did this on day 1.
 ~~~
+
+* [Remotes in GitHub](https://swcarpentry.github.io/git-novice/07-github.html)
 
 ## Syncing last week's work to GitHub
 
@@ -57,11 +56,11 @@ Follow these episodes
 
 As a final exercise, you will learn how others can contribute to your repository even when they don't have been given access as a collaborator.
 
-Your teachers will suggest a change to the file `mars.txt` in your repository.
+Your teachers will suggest a change to the file `guacamole.md` in your repository.
 Please let them know where your repository is on GitHub.
 
 * Add a link to your GitHub repository to this [Google Sheet](https://docs.google.com/spreadsheets/d/11MCUPoohlS76hDFWzwdO_mlhsT0NuJpGsIWoCHXhSvo/edit?usp=sharing).
 * Keep an eye on your email
 * Find out what change the teacher has proposed
 * Accept the change by Merging the Pull Request
-* Synchronize the repository to Fox and inspect your file(s)
+* Pull the changes to your repository on Fox and inspect your file(s)

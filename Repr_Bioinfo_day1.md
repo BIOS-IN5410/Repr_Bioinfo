@@ -30,15 +30,24 @@ module avail git
 ```
 
 Choose the latest version.
-At the time of writing this, the latest version is 2.38.1.
+At the time of writing this, the latest version is 2.42.0
+<!-- FIXME update with latest version each year -->
 To be able to use it, type:
 
 ```
-module load git/2.38.1-GCCcore-12.2.0-nodocs
+module load git/2.42.0-GCCcore-13.2.0
 ```
 
 Now run `git --version` to verify that you have access to `git`.
 
+**NOTE** if you see the following:
+
+~~~bash
+bash: git: command not found...
+Install package 'git-core' to provide command 'git'? [N/y]
+~~~
+
+Press `N` and use the `module load` command described above instead.
 
 ## Tell `git` about us
 
@@ -113,7 +122,7 @@ same commands to choose another editor or update your email address.
 ## Setting up github.com
 
 We will be using the could service for version control GitHub for sharing what we have under version control
-with eacho other, and/or the world.
+with eachother, and/or the world.
 For this, you will need an account on GitHub,
 and enable Fox to communicte with GitHub's servers.
 
@@ -146,32 +155,35 @@ We will only have to do it once.
 We will run the list command to check what key pairs already exist on your computer.
 
 ~~~bash
-ls -al ~/.ssh
+ls -a ~/.ssh
 ~~~
 
 
-Your output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using. 
+Your output is going to look a little different depending on whether or not 
+SSH has ever been set up on the computer you are using. 
 
-* If you have not set up SSH on Fox, the output is 
+**If you have not set up SSH on Fox**,
+the output will contain one or more of the following
 
 ~~~
-ls: cannot access '/fp/homes01/u01/ec-username/.ssh': No such file or directory
+id_fox_internal
+id_fox_internal.pub
+authorized_keys
+known_hosts
 ~~~
+
 
 When you see this, continue with the next section.
 
-* You may also see this:
+**If you have already set up SSH on Fox**,
+the output will include the public and private key pairs:
 
 ~~~
-drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ./
-drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
--rw-r--r-- 1 Vlad Dracula 197121 419 Jul 16 14:48 known_hosts
+id_ed25519
+id_ed25519.pub
 ~~~
 
-When you see this, continue with the next section.
-
-
-* If you have already set up SSH on Fox, the output will list the public and private key pairs. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up. This means you can skip the enxt secion and go directly to **"Copy the public key to GitHub"** below.
+This means you can skip the next section and go directly to **"Copy the public key to GitHub"** below.
 
 
 ### Create an SSH key pair
@@ -192,7 +204,6 @@ Enter file in which to save the key (/fp/homes01/u01/ec-username/.ssh/id_ed25519
 We want to use the default file, so just press **Enter**.
 
 ~~~bash
-Created directory '/fp/homes01/u01/ec-username/.ssh'.
 Enter passphrase (empty for no passphrase):
 ~~~
 
@@ -235,15 +246,14 @@ is a shorter version of a public key.
 Now that we have generated the SSH keys, we will find the SSH files when we check.
 
 ~~~bash
-ls -al ~/.ssh
+ls -a ~/.ssh
 ~~~
 
+This should now include these files:
 
 ~~~
-drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ./
-drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
--rw-r--r-- 1 Vlad Dracula 197121 419 Jul 16 14:48 id_ed25519
--rw-r--r-- 1 Vlad Dracula 197121 106 Jul 16 14:48 id_ed25519.pub
+id_ed25519
+id_ed25519.pub
 ~~~
 
 
@@ -298,7 +308,7 @@ Now, on GitHub.com do the following:
 * Click "Settings," then on the  settings page, click "SSH and GPG keys,"
   on the left side "Account settings" menu.  
 * Click the "New SSH key" button on the right side.
-* Now, you can add a title, for example `Fox.sigma2.no`
+* Now, you can add a title, for example `Fox.educloud.no`
   so we can remember where the original key pair files are located
 * Paste your SSH key into the field
 * Click the "Add SSH key" to complete the setup.

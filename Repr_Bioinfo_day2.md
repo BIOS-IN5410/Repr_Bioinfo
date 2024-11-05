@@ -4,42 +4,23 @@ For this part, you will be using Fox, not your own computer.
 After logging in to Fox, choose on of the `int-` nodes
 and log in to that.
 
+~~~diff
+! If you have have not yet done what is written for [Day 1](Repr_Bioinfo_day1.md) of this module you have to do this first!
+~~~
+
 
 ## Using git on Fox
 
-<!-- FIXME NEXT TIME edit to only load the module-->
+As we did on day 1, we need to enable the use of git:
 
-The program we will use, `git`, is installed on Fox login nodes,
-but not on the compute nodes.
-
-Use this command to see which versions of `git` are installed:
+<!-- FIXME update with latest version each year -->
 
 ```
-module avail git
-```
-
-Choose the latest version.
-At the time of writing this, the latest version is 2.38.1.
-To activate it, type:
-
-```
-module load git/2.38.1-GCCcore-12.2.0-nodocs
+module load git/2.42.0-GCCcore-13.2.0
 ```
 
 Now run `git --version` to verify that you have access to `git`.
 
-## A quick check
-
-Run this command:
-
-```
-git config --list
-```
-
-It should give several lines of output.
-If there is no output,
-**you have to first follow the instructions for [Day 1](Repr_Bioinfo_day1.md) of this module**
-before you continue.
 
 ## Where to do the work
 
@@ -53,7 +34,7 @@ Follow these lesson episodes:
 NOTES
 * If you are short on time, please skip the exercises,
 these are marked with a pencil symbol at the left of the title.
-* After today, **do not delete the planets folder**, you will need it again
+* After today, **do not delete the `recipes` folder**, you will need it again
   for the next session
 
 * [Creating a Repository](https://swcarpentry.github.io/git-novice/03-create.html)
@@ -65,5 +46,5 @@ these are marked with a pencil symbol at the left of the title.
 * [Ignoring Things](https://swcarpentry.github.io/git-novice/06-ignore.html)
 
 NOTES
-* As mentioned, **do not delete the `planets` folder**, you will need it again
+* As mentioned, **do not delete the `recipes` folder**, you will need it again
   for the next session
