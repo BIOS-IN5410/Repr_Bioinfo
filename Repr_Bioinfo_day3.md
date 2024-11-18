@@ -2,15 +2,6 @@
 
 For this part, you will again be using Fox, not your own computer.
 
-<!-- 
-## More housekeeping
-
-First, we need to do something on GitHub because
-no longer accepts passwwords.
-
-Follow [these instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic).
-
--->
 
 Remember to enable the use of the `git` command on Fox
 by using `module load git/#.#.#...` as you did previously.
@@ -32,13 +23,6 @@ We will again follow some lesson episodes:
 
 * [Remotes in GitHub](https://swcarpentry.github.io/git-novice/07-github.html)
 
-## Syncing last week's work to GitHub
-
-Last week you committed a few SLURM scripts to version control.
-
-* Make a new GitHub repository
-* Add it as a remote to your version control folder on Fox
-* Push the commits from it to your new repository on GitHub
 
 ## Pairing up
 
@@ -64,3 +48,14 @@ Please let them know where your repository is on GitHub.
 * Find out what change the teacher has proposed
 * Accept the change by Merging the Pull Request
 * Pull the changes to your repository on Fox and inspect your file(s)
+
+## Syncing last week's work to GitHub
+
+Last week you created a few SLURM scripts.
+Consider commitng these to version control!
+
+* Create a new git repository in the folder with these scripts
+* Commit the SLURM scripts
+* Make a new GitHub repository
+* Add it as a remote to your version control folder on Fox
+* Push the commits from it to your new repository on GitHub
