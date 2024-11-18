@@ -52,7 +52,7 @@ Please let them know where your repository is on GitHub.
 ## Syncing last week's work to GitHub
 
 Last week you created a few SLURM scripts.
-Consider commitng these to version control!
+Consider committing these to version control!
 
 * Create a new git repository in the folder with these scripts
 * Commit the SLURM scripts
