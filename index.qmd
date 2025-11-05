@@ -1,5 +1,5 @@
 # Home {.unnumbered}
 
-Materials for the Reproducible Bioinformatics Analysis module of IN-BIOS5410/9410
+Materials for the Reproducible Bioinformatics Analysis module of IN-BIOS5410/9410.
 
 Find instructions for each course day at the left.

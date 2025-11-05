@@ -1,8 +1,8 @@
 # Reproducible Bioinformatics Analysis
 Materials for the Reproducible Bioinformatics Analysis module of IN-BIOS5410/9410
 
-## For å generere HTML versjonen
+## To generate the  HTML version
 
-* forutsetter quarto og pandoc installert
-* kjør `quarto render` for html versjonen
-* kjør `quarto publish gh-pages` for å oppdatere [html versjonen på GitHub Pages](https://bios-in5410.github.io/Repr_Bioinfo/)
+* Requires quarto and pandoc installed
+* Run `quarto render` to get the html version locally
+* Run `quarto publish gh-pages` to update the [site on GitHub Pages](https://bios-in5410.github.io/Repr_Bioinfo/)
