@@ -1,0 +1,152 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BIOS_IN5410/9410: Reproducible Bioinformatics Analysis",
+    "section": "",
+    "text": "Home\nMaterials for the Reproducible Bioinformatics Analysis module of IN-BIOS5410/9410\nFind instructions for each course day at the left.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "day1.html",
+    "href": "day1.html",
+    "title": "Day 1",
+    "section": "",
+    "text": "Log in\nToday we will do some ‘housekeeping’. We need to do several steps to prepare for the rest of this module.\nLog in to Educloud Fox Compute Cluster if you haven’t already: * replace ec-username with your Educloud username\nAfter logging in to Fox, choose on of the int- nodes and log in to that.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Day 1</span>"
+    ]
+  },
+  {
+    "objectID": "day1.html#log-in",
+    "href": "day1.html#log-in",
+    "title": "Day 1",
+    "section": "",
+    "text": "ssh ec-username@fox.educloud.no",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Day 1</span>"
+    ]
+  },
+  {
+    "objectID": "day1.html#using-git-on-fox",
+    "href": "day1.html#using-git-on-fox",
+    "title": "Day 1",
+    "section": "Using git on Fox",
+    "text": "Using git on Fox\nAs part of BIOS-IN5410/9410, we will be using the so-called version control software git. This program is not installed by default on the compute nodes.\nUse this command to see which versions of git are installed:\nmodule avail git\nChoose the latest version. At the time of writing this, the latest version is 2.49.0  To be able to use it, type:\nmodule load git/2.49.0-GCCcore-14.2.0\nNow run git --version to verify that you have access to git.\nNOTE if you see the following:\n  bash: git: command not found...\n  Install package 'git-core' to provide command 'git'? [N/y]\nPress N and use the module load command described above instead.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Day 1</span>"
+    ]
+  },
+  {
+    "objectID": "day1.html#tell-git-about-us",
+    "href": "day1.html#tell-git-about-us",
+    "title": "Day 1",
+    "section": "Tell git about us",
+    "text": "Tell git about us\nWhen we use git on a new computer for the first time, we need to configure a few things. This we only need to do once.\nBelow are a few examples of configurations we will set as we get started with Git:\n\nour name and email address,\nwhat our preferred text editor is,\nand that we want to use these settings globally (i.e. for every project).\n\nOn a command line, Git commands are written as git verb options, where verb is what we actually want to doand options is additional optional information which may be needed for the verb. Type the following, replacing the text in quotation marks with your own name and email address (note that you will not see any output from these commands):\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your@email.address\"\nThis user name and email will be associated with your subsequent Git activity.\nFor this lesson, we will also be interacting with GitHub and so the email address used should be the same as the one used when you later will be setting up your GitHub account. If you are concerned about privacy, please review [GitHub’s instructions for keeping your email address private][git-privacy].\n\nKeeping your email private\nIf you elect to use a private email address with GitHub, then use that same email address for the user.email value, e.g. username@users.noreply.github.com replacing username with your GitHub one.\n\nWe will be using the basic text editor “nano”, so let’s git know about it:\ngit config --global core.editor \"nano -w\"\nGit (starting with version 2.28) allows configuration of the name of the branch created when you initialize any new repository. We wil use that feature to set it to main so it matches what GitHub uses:\ngit config --global init.defaultBranch main\nFinally, we will set up how git behaves when it interacts with GitHub.\ngit config --global pull.rebase false\nThe commands we just ran above only need to be run once: the flag --global tells Git to use the settings for every project, in your user account, on this computer.\nYou can check your settings at any time:\ngit config --list\nYou can change your configuration as many times as you want: use the same commands to choose another editor or update your email address.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Day 1</span>"
+    ]
+  },
+  {
+    "objectID": "day1.html#setting-up-github.com",
+    "href": "day1.html#setting-up-github.com",
+    "title": "Day 1",
+    "section": "Setting up github.com",
+    "text": "Setting up github.com\nWe will be using the could service for version control GitHub for sharing what we have under version control with eachother, and/or the world. For this, you will need an account on GitHub, and enable Fox to communicte with GitHub’s servers.\n\nCreate an account on GitHub\n\nIf you haven’t done so already, go to github.com and create an account.\nIf you have an account already, make sure you can log into it.\nMake sure the email address used is be the same as the one you used when setting up your git on Fox, above. If necessary, run the git config --global user.email \"your@email.address\" again.\n\n\n\nEnabling git on Fox (Educloud) to communicate with Github.com\nWe need to set up a way for Fox to authenticate with GitHub so it knows it’s us trying to connect to it.\nWe are going to set up the method that is commonly used by many different services to authenticate access on the command line. This method is called Secure Shell Protocol (SSH). SSH is a cryptographic network protocol that allows secure communication between computers using an otherwise insecure network.\nSSH uses what is called a key pair. This is two keys that work together to validate access. One key is publicly known and called the public key, and the other key called the private key is kept private. Very descriptive names.\nYou can think of the public key as a padlock, and only you have the key (the private key) to open it. You use the public key where you want a secure method of communication, such as your GitHub account. You give this padlock, or public key, to GitHub and say “lock the communications to my account with this so that only computers that have my private key can unlock communications and send git commands as my GitHub account.”\nWhat we will do now is the minimum required to set up the SSH keys and add the public key to a GitHub account. We will only have to do it once.\nWe will run the list command to check what key pairs already exist on your computer.\nls -a ~/.ssh\nYour output is going to look a little different depending on whether or not SSH has ever been set up on the computer you are using.\nIf you have not set up SSH on Fox, the output will contain one or more of the following\n  id_fox_internal\n  id_fox_internal.pub\n  authorized_keys\n  known_hosts\nWhen you see this, continue with the next section.\nIf you have already set up SSH on Fox, the output will include the public and private key pairs:\n  id_ed25519\n  id_ed25519.pub\nThis means you can skip the next section and go directly to “Copy the public key to GitHub” below.\n\n\nCreate an SSH key pair\nTo create an SSH key pair use this command, where the -t option specifies which type of algorithm to use and -C attaches a comment to the key, in our case, your email address:\nssh-keygen -t ed25519 -C \"your@email.address\"\n  Generating public/private ed25519 key pair.\n  Enter file in which to save the key (/fp/homes01/u01/ec-username/.ssh/id_ed25519):\nWe want to use the default file, so just press Enter.\nEnter passphrase (empty for no passphrase):\nNow, it is prompting us for a passphrase. Since we are using an account on Fox that only we have access to, we can skip creating a passphrase. If you decide to do it anyways, be sure to use something memorable or save your passphrase somewhere, as there is no “reset my passphrase” option.\nEnter same passphrase again:\nAfter entering the same passphrase a second time, we receive the confirmation\n  Your identification has been saved in /fp/homes01/u01/ec-username/.ssh/id_ed25519\n  Your public key has been saved in /fp/homes01/u01/ec-username/.ssh/id_ed25519.pub\n  The key fingerprint is:\n  SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o your@email.address\n  The key's randomart image is:\n  +--[ED25519 256]--+\n  |^B== o.          |\n  |%*=.*.+          |\n  |+=.E =.+         |\n  | .=.+.o..        |\n  |....  . S        |\n  |.+ o             |\n  |+ =              |\n  |.o.o             |\n  |oo+.             |\n  +----[SHA256]-----+\nThe “identification” is actually the private key. You should never share it. The public key is appropriately named. The “key fingerprint” is a shorter version of a public key.\nNow that we have generated the SSH keys, we will find the SSH files when we check.\nls -a ~/.ssh\nThis should now include these files:\n  id_ed25519\n  id_ed25519.pub\n\n\nCopy the public key to GitHub\nNow we have a SSH key pair and we can run this command to check if GitHub can read our authentication.\nssh -T git@github.com\nIf you have never done this before, you’ll likely see this message:\n  The authenticity of host 'github.com (192.30.255.112)' can't be established.\n  RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.\n  This key is not known by any other names\n  Are you sure you want to continue connecting (yes/no/[fingerprint])? y\n  Please type 'yes', 'no' or the fingerprint: yes\n  Warning: Permanently added 'github.com' (RSA) to the list of known hosts.\n  git@github.com: Permission denied (publickey).\nYou may also see this message:\n  Permission denied (publickkey)\nThis is fine, we’ll fix this in the next step.\nNow Fox knows we trust github.com as a server. But we still need to give GitHub our public key.\nFirst, we need to copy the public key. Be sure to include the .pub at the end, otherwise you’re looking at the private key.\ncat ~/.ssh/id_ed25519.pub\nThe output will look something like this:\n  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI your@email.address\nNow, on GitHub.com do the following:\n\nClick on your profile icon in the top right corner to get the drop-down menu.\n\nClick “Settings,” then on the settings page, click “SSH and GPG keys,” on the left side “Account settings” menu.\n\nClick the “New SSH key” button on the right side.\nNow, you can add a title, for example Fox.educloud.no so we can remember where the original key pair files are located\nPaste your SSH key into the field\nClick the “Add SSH key” to complete the setup.\n\nNow that we’ve set that up, let’s check our authentication again from the command line.\nssh -T git@github.com\nYou should now see this message:\n  Hi Your Name! You've successfully authenticated, but GitHub does not provide shell access.\nThis output confirms that the SSH key works as intended. We are now ready to start learning version control!\n\nThis material was adapted from the Software Carpentry git lesson under their CC BY 4.0 license.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Day 1</span>"
+    ]
+  },
+  {
+    "objectID": "day2.html",
+    "href": "day2.html",
+    "title": "Day 2",
+    "section": "",
+    "text": "Using git on Fox\nFor this part, you will be using Fox, not your own computer. After logging in to Fox, choose on of the int- nodes and log in to that.\nAs we did on day 1, we need to enable the use of git:\nNow run git --version to verify that you have access to git.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Day 2</span>"
+    ]
+  },
+  {
+    "objectID": "day2.html#using-git-on-fox",
+    "href": "day2.html#using-git-on-fox",
+    "title": "Day 2",
+    "section": "",
+    "text": "module load git/2.49.0-GCCcore-14.2.0",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Day 2</span>"
+    ]
+  },
+  {
+    "objectID": "day2.html#where-to-do-the-work",
+    "href": "day2.html#where-to-do-the-work",
+    "title": "Day 2",
+    "section": "Where to do the work",
+    "text": "Where to do the work\nStart working in a folder such as /fp/homes01/u01/ec-username/BIOS-IN5410 replacing ec-username with your Educloud username.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Day 2</span>"
+    ]
+  },
+  {
+    "objectID": "day2.html#getting-started-with-git",
+    "href": "day2.html#getting-started-with-git",
+    "title": "Day 2",
+    "section": "Getting started with git",
+    "text": "Getting started with git\nFollow these lesson episodes:\nNOTES * If you are short on time, please skip the exercises, these are marked with a pencil symbol at the left of the title. * After today, do not delete the recipes folder, you will need it again for the next session\n\nCreating a Repository\n\nNOTE here you are asked to make a folder on your Desktop, but we don’t have that on Fox. Use /fp/homes01/u01/ec-username/BIOS-IN5410 instead (replacing ec-username with your Educloud username).\n\nTracking Changes\nExploring History\nIgnoring Things\n\nNOTES * As mentioned, do not delete the recipes folder, you will need it again for the next session",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Day 2</span>"
+    ]
+  },
+  {
+    "objectID": "day3.html",
+    "href": "day3.html",
+    "title": "Day 3",
+    "section": "",
+    "text": "Repository on GitHub\nFor this part, you will again be using Fox, not your own computer.\nRemember to enable the use of the git command on Fox by using module load git/#.#.#... as you did previously.\nWe will again follow some lesson episodes:\nNOTEs",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Day 3</span>"
+    ]
+  },
+  {
+    "objectID": "day3.html#repository-on-github",
+    "href": "day3.html#repository-on-github",
+    "title": "Day 3",
+    "section": "",
+    "text": "Use the recipes folder you made last time for this lesson also.\nIf you are short on time, please skip the exercises, these are marked with a pencil symbol at the left of the title.\n\n\n\n\n\n\n\nImportant\n\n\n\nThe section “3. SSH Background and Setup” should be skipped as we did this on day 1.\n\n\n\nRemotes in GitHub",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Day 3</span>"
+    ]
+  },
+  {
+    "objectID": "day3.html#pairing-up",
+    "href": "day3.html#pairing-up",
+    "title": "Day 3",
+    "section": "Pairing up",
+    "text": "Pairing up\nFor the next part, pair up with someone at your table. You should agree on roles: * One person is the Owner and will be using their planets repository on GitHub and Fox * The other person is the Collaborator. It is very important the collaborator no longer works in their planets folder on Fox! Use cd .. before continuing.\nFollow these episodes\n\nCollaborating\n\nSKIP the exercise Switch Roles and Repeat\n\nConflicts",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Day 3</span>"
+    ]
+  },
+  {
+    "objectID": "day3.html#other-ways-to-collaborate",
+    "href": "day3.html#other-ways-to-collaborate",
+    "title": "Day 3",
+    "section": "Other ways to collaborate",
+    "text": "Other ways to collaborate\nAs a final exercise, you will learn how others can contribute to your repository even when they don’t have been given access as a collaborator.\nYour teachers will suggest a change to the file guacamole.md in your repository. Please let them know where your repository is on GitHub.\n\nAdd a link to your GitHub repository to this Google Sheet.\nKeep an eye on your email\nFind out what change the teacher has proposed\nAccept the change by Merging the Pull Request\nPull the changes to your repository on Fox and inspect your file(s)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Day 3</span>"
+    ]
+  },
+  {
+    "objectID": "day3.html#syncing-last-weeks-work-to-github",
+    "href": "day3.html#syncing-last-weeks-work-to-github",
+    "title": "Day 3",
+    "section": "Syncing last week’s work to GitHub",
+    "text": "Syncing last week’s work to GitHub\nLast week you created a few SLURM scripts. Consider committing these to version control!\n\nCreate a new git repository in the folder with these scripts\nCommit the SLURM scripts\nMake a new GitHub repository\nAdd it as a remote to your version control folder on Fox\nPush the commits from it to your new repository on GitHub",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Day 3</span>"
+    ]
+  }
+]
