@@ -62,7 +62,7 @@ Below are a few examples of configurations we will set as we get started with Gi
 * and that we want to use these settings globally (i.e. for every project).
 
 On a command line, Git commands are written as `git verb options`,
-where `verb` is what we actually want to doand `options` is
+where `verb` is what we actually want to do and `options` is
 additional optional information which may be needed for the `verb`.
 Type the following, replacing the text in quotation marks
 with your own name and email address
@@ -78,13 +78,14 @@ This user name and email will be associated with your subsequent Git activity.
 For this lesson, we will also be interacting with [GitHub](https://github.com/)
 and so the email address used should be the same as the one used when
 you later will be setting up your GitHub account.
-If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
+If you are concerned about privacy,
+please review [GitHub's instructions for keeping your email address private](https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address). 
 
 >## Keeping your email private
 >
 >If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one.
 
-We will be using the basic text editor "nano", so let's git know about it:
+We will be using the basic text editor `nano`, so let's git know about it:
 
 ~~~bash
 git config --global core.editor "nano -w"
