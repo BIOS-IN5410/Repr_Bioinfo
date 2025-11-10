@@ -209,7 +209,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Today we will do some ‘housekeeping’. We need to do several steps to prepare for the rest of this module.</p>
 <section id="log-in" class="level2">
 <h2 class="anchored" data-anchor-id="log-in">Log in</h2>
-<p>Log in to Educloud Fox Compute Cluster if you haven’t already: * replace ec-username with your Educloud username</p>
+<p>Log in to Educloud Fox Compute Cluster if you haven’t already:</p>
+<ul>
+<li>use your terminal program (not your webbrowser)</li>
+<li>replace ec-username with your Educloud username</li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> ec-username@fox.educloud.no</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>After logging in to Fox, choose on of the <code>int-</code> nodes and log in to that.</p>
 </section>
@@ -239,7 +243,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your@email.address"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This user name and email will be associated with your subsequent Git activity.</p>
-<p>For this lesson, we will also be interacting with <a href="https://github.com/">GitHub</a> and so the email address used should be the same as the one used when you later will be setting up your GitHub account. If you are concerned about privacy, please review <a href="https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address">GitHub’s instructions for keeping your email address private</a>.</p>
+<p>For this lesson, we will also be interacting with <a href="https://github.com/">GitHub</a> and so the email address used should be the same as the one you (will) use with your GitHub account. If you already have a GitHub account, choose one from the <a href="https://github.com/settings/emails">page listing your emailaddress on github.com</a></p>
+<p>If you are concerned about privacy, please review <a href="https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address">GitHub’s instructions for keeping your email address private</a>.</p>
 <blockquote class="blockquote">
 <h2 id="keeping-your-email-private" class="anchored">Keeping your email private</h2>
 <p>If you elect to use a private email address with GitHub, then use that same email address for the <code>user.email</code> value, e.g.&nbsp;<code>username@users.noreply.github.com</code> replacing <code>username</code> with your GitHub one.</p>
