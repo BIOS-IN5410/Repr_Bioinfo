@@ -243,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your@email.address"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This user name and email will be associated with your subsequent Git activity.</p>
-<p>For this lesson, we will also be interacting with <a href="https://github.com/">GitHub</a> and so the email address used should be the same as the one you (will) use with your GitHub account. If you already have a GitHub account, choose one from the <a href="https://github.com/settings/emails">page listing your emailaddress on github.com</a></p>
+<p>For this lesson, we will also be interacting with <a href="https://github.com/">GitHub</a> and so the email address used should be the same as the one you (will) use with your GitHub account. If you already have a GitHub account, choose one from the <a href="https://github.com/settings/emails">page listing your like on github.com</a></p>
 <p>If you are concerned about privacy, please review <a href="https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address">GitHub’s instructions for keeping your email address private</a>.</p>
 <blockquote class="blockquote">
 <h2 id="keeping-your-email-private" class="anchored">Keeping your email private</h2>
@@ -345,7 +345,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>First, we need to copy the public key. Be sure to include the <code>.pub</code> at the end, otherwise you’re looking at the private key.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ~/.ssh/id_ed25519.pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The output will look something like this:</p>
-<pre><code>  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI your@email.address</code></pre>
+<pre><code>  ssh-ed25519 AAAAC3NzaC1lZDI1NT... your@email.address</code></pre>
 <p>Now, on GitHub.com do the following:</p>
 <ul>
 <li>Click on your profile icon in the top right corner to get the drop-down menu.<br>
@@ -360,7 +360,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now that we’ve set that up, let’s check our authentication again from the command line.</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You should now see this message:</p>
-<pre><code>  Hi Your Name! You've successfully authenticated, but GitHub does not provide shell access.</code></pre>
+<pre><code>Hi Your Name! You've successfully authenticated, 
+but GitHub does not provide shell access.</code></pre>
 <p>This output confirms that the SSH key works as intended. We are now ready to start learning version control!</p>
 <hr>
 <p>This material was adapted from the <a href="https://swcarpentry.github.io/git-novice">Software Carpentry git lesson</a> under their CC BY 4.0 license.</p>
