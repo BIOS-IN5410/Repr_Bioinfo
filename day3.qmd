@@ -27,6 +27,7 @@ The section "3. SSH Background and Setup" should be skipped as we did this on da
 ## Pairing up
 
 For the next part, pair up with someone at your table. You should agree on roles:
+
 * One person is the **Owner** and will be using *their* planets repository on GitHub and Fox
 * The other person is the *Collaborator*. It is very important the collaborator **no longer works in their `planets` folder** on Fox! Use `cd ..` before continuing.
 
