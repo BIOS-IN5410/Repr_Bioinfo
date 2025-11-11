@@ -124,7 +124,7 @@
     "href": "day3.html#pairing-up",
     "title": "Day 3",
     "section": "Pairing up",
-    "text": "Pairing up\nFor the next part, pair up with someone at your table. You should agree on roles: * One person is the Owner and will be using their planets repository on GitHub and Fox * The other person is the Collaborator. It is very important the collaborator no longer works in their planets folder on Fox! Use cd .. before continuing.\nFollow these episodes\n\nCollaborating\n\nSKIP the exercise Switch Roles and Repeat\n\nConflicts",
+    "text": "Pairing up\nFor the next part, pair up with someone at your table. You should agree on roles:\n\nOne person is the Owner and will be using their planets repository on GitHub and Fox\nThe other person is the Collaborator. It is very important the collaborator no longer works in their planets folder on Fox! Use cd .. before continuing.\n\nFollow these episodes\n\nCollaborating\n\nSKIP the exercise Switch Roles and Repeat\n\nConflicts",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Day 3</span>"
     ]
