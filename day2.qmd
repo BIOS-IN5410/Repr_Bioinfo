@@ -5,7 +5,7 @@ After logging in to Fox, choose on of the `int-` nodes
 and log in to that.
 
 ::: {.callout-important}
-If you have have not yet done what is written for [@sec-day1] of this module you have to do this first!
+If you have have not yet done what is written for [Day 1](day1.qmd) of this module you have to do this first!
 :::
 
 

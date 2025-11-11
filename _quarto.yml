@@ -1,22 +1,39 @@
 project:
-  type: book
+  type: website
 
-number-sections: false
+website:
+  title: "BIOS-IN-5410-9410"
+  sidebar:
+    contents:
+      - href: index.qmd
+        text: Home
+      - section: "Day 1"
+        contents:
+        - href: day1.qmd
+          text: Day 1 hands-on
+      - section: "Day 2"
+        contents:
+        - href: day2.qmd
+          text: Day 2 hands-on
+        - href: day2_slides.qmd
+          text: Day 2 slides
+          target: _blank
+      - section: "Day 3"
+        contents:
+        - href: day3.qmd
+          text: Day 3 hands-on
+        - href: day3_slides.qmd
+          text: Day 3 slides
+          target: _blank
 
-book:
-  title: "BIOS_IN5410/9410: Reproducible Bioinformatics Analysis"
-  author: "Lex Nederbragt"
-  date: today
-  chapters:
-    - index.qmd
-    - day1.qmd
-    - day2.qmd
-    - day3.qmd
-
-#bibliography: references.bib
 
 format:
   html:
     theme:
       - cosmo
       - brand
+    css: styles.css
+    toc: true
+
+
+

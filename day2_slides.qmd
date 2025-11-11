@@ -1,0 +1,175 @@
+---
+title: "Reproducible Bioinformatics Analysis module"
+subtitle: "BIOS-IN5410/9410 - Day 2"
+author: "Lex Nederbragt"
+date: 2025-11-11
+date-format: long
+lang: en
+format:
+  revealjs:
+    theme: [serif, custom.scss]
+    standalone: true
+---
+
+## Reproducible Bioinformatics Analysis module
+
+![](img/phdcomics_scratch.png)
+
+
+## Program for today
+
+* Introductions
+* What is version control
+* Examples of Version Control you may have seen already
+* Hands-on: using `git` for version control (on educloud)
+
+## Introductions
+
+* Your teacher
+* Your prior experiences
+
+## Your teacher
+
+### Lex Nederbragt
+
+:::: {.columns}
+
+::: {.column width="80%"}
+- Associate Teaching professor, Dept. of Biosciences
+- Topics: Programming, Bioinformatics, Pedagogy
+- Teaching
+  - BIOS1101 – Introduction to computational models for Biosciences
+  - Other bioinformatics courses
+:::
+
+::: {.column width="20%"}
+
+![](img/DSC8928_zoom.jpg)
+
+:::
+
+::::
+
+
+## Your prior experiences
+
+* Mentimeter
+
+
+## Examples of document histories
+
+* <https://en.wikipedia.org/wiki/Norway>, click `View history`
+* Google Docs
+
+
+## Manual Version Control
+
+
+~~~
+.
+|-- project_name
+|  |-- current
+|  |  |-- data
+|  |  |-- scripts
+|  |  |-- results
+|  |-- 2021-03-01
+|  |  |-- …content of 'current' on Mar 1, 2021
+|  |-- 2021-02-19
+|  |  |-- …content of 'current' on Feb 19, 2021
+~~~
+
+
+## What is version control?
+
+::: {.incremental}
+* Annotated log of changes
+  * what was changed in a file, when, and by whom
+* Backup system
+  * synchronize changes to a central server
+* Collaboration tool
+  * multiple contributors can manage changes to the same set of files
+* For any file type
+  * but **text files** work best
+:::
+
+
+## What is version control?
+
+### Version control - a definition
+
+> A tool for managing changes to a set of files.
+> 
+> * Each set of changes creates a new revision of the files.
+> * Allows users to recover old revisions reliably.
+> * Helps manage conflicting changes made by different users
+
+
+From <https://swcarpentry.github.io/git-novice/reference.html>
+
+
+## Version control: use case 1
+
+![](img/phd101212s.png)
+
+
+## Version control: use case 2
+
+From my own work
+
+
+~~~
+$ cd scripts
+$ ls -F
+blat_parse4.pl  old_versions/  snps_flanks_2_fastq.pl
+~~~
+
+
+## Version control: use case 2
+
+From my own work
+
+
+~~~
+$ cd scripts
+$ ls -F
+blat_parse4.pl  old_versions/  snps_flanks_2_fastq.pl
+~~~
+
+~~~
+$ ls old_versions/
+blat_parse2.pl  blat_parse_attemp1.pl   blat_parse.pl.bak
+blat_parse.pl   blat_parse3_backup.pl   blat_parse3.pl
+~~~
+
+
+## Version control: use cases
+
+How would version control have helped?
+
+* Older versions 'hidden' but still accessible
+* Annotated history of all changes available
+
+Bonus:
+
+* Allows for safely trying out changes
+
+## Mentimeter
+
+* Why would we want to keep track of changes to files?
+
+
+## Hands on: `git` and Github
+
+Follow the instructions on GitHub.
+
+
+## For the coming days
+
+* Writing something in a text file: commit it to version control
+
+
+## Exit quiz
+
+* Mentimeter
+
+

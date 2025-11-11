@@ -2,7 +2,6 @@
 
 For this part, you will again be using Fox, not your own computer.
 
-
 Remember to enable the use of the `git` command on Fox
 by using `module load git/#.#.#...` as you did previously.
 
