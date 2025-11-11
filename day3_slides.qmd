@@ -24,6 +24,9 @@ format:
 * Stage (some of) your changes with `git add`
 * Commit staged changes with `git commit -m`
 
+## Recap: Your questions
+
+From the Exit quiz from day 2
 
 ## Hands on: `git` and Github continued
 
