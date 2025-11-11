@@ -94,7 +94,7 @@
     "href": "day2.html#getting-started-with-git",
     "title": "Day 2",
     "section": "Getting started with git",
-    "text": "Getting started with git\nFollow these lesson episodes:\nNOTES * If you are short on time, please skip the exercises, these are marked with a pencil symbol at the left of the title. * After today, do not delete the recipes folder, you will need it again for the next session\n\nCreating a Repository\n\nNOTE here you are asked to make a folder on your Desktop, but we don’t have that on Fox. Use /fp/homes01/u01/ec-username/BIOS-IN5410 instead (replacing ec-username with your Educloud username).\n\nTracking Changes\nExploring History\nIgnoring Things\n\nNOTES * As mentioned, do not delete the recipes folder, you will need it again for the next session",
+    "text": "Getting started with git\nFollow these lesson episodes:\nNOTES\n\nIf you are short on time, please skip the exercises, these are marked with a pencil symbol at the left of the title.\nAfter today, do not delete the recipes folder, you will need it again for the next session\nCreating a Repository\n\nNOTE here you are asked to make a folder on your Desktop, but we don’t have that on Fox. Use /fp/homes01/u01/ec-username/BIOS-IN5410 instead (replacing ec-username with your Educloud username).\n\nTracking Changes\nExploring History\nIgnoring Things\n\nNOTES\n\nAs mentioned, do not delete the recipes folder, you will need it again for the next session",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Day 2</span>"
     ]
