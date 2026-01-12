@@ -10,7 +10,7 @@ by using `module load git/#.#.#...` as you did previously.
 
 We will again follow some lesson episodes:
 
-**NOTEs**
+**NOTES**
 
 1. Use the `recipes` folder you made last time for this lesson also.
 2. If you are short on time, please skip the exercises,
@@ -27,8 +27,8 @@ The section "3. SSH Background and Setup" should be skipped as we did this on da
 
 For the next part, pair up with someone at your table. You should agree on roles:
 
-* One person is the **Owner** and will be using *their* planets repository on GitHub and Fox
-* The other person is the *Collaborator*. It is very important the collaborator **no longer works in their `planets` folder** on Fox! Use `cd ..` before continuing.
+* One person is the **Owner** and will be using *their* `recipes` repository on GitHub and Fox
+* The other person is the *Collaborator*. It is very important the collaborator **no longer works in their `recipes` folder** on Fox! Use `cd ..` before continuing.
 
 Follow these episodes
 
