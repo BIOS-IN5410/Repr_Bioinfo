@@ -13,7 +13,7 @@ format:
 
 ## Reproducible Bioinformatics Analysis module
 
-![](img/phdcomics_scratch.png)
+![](http://www.phdcomics.com/comics/archive/phd031214s.gif)
 
 
 ## Program for today
@@ -44,7 +44,7 @@ format:
 
 ::: {.column width="20%"}
 
-![](img/DSC8928_zoom.jpg)
+![](https://www.mn.uio.no/ibv/personer/vit/alexajo/lex150px.jpg)
 
 :::
 
@@ -109,7 +109,7 @@ From <https://swcarpentry.github.io/git-novice/reference.html>
 
 ## Version control: use case 1
 
-![](img/phd101212s.png)
+![](http://www.phdcomics.com/comics/archive/phd101212s.gif)
 
 
 ## Version control: use case 2
