@@ -32,12 +32,12 @@ module avail git
 ~~~
 
 Choose the latest version.
-At the time of writing this, the latest version is 2.49.0
+At the time of writing this, the latest version is 2.50.1
 <!-- FIXME update with latest version each year -->
 To be able to use it, type:
 
 ~~~bash
-module load git/2.49.0-GCCcore-14.2.0
+module load git/2.50.1-GCCcore-14.3.0
 ~~~
 
 Now run `git --version` to verify that you have access to `git`.

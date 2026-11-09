@@ -2,7 +2,7 @@
 title: "Reproducible Bioinformatics Analysis module"
 subtitle: "BIOS-IN5410/9410 - Day 3"
 author: "Lex Nederbragt"
-date: 2025-11-17
+date: 2026-11-16
 date-format: long
 lang: en
 format:

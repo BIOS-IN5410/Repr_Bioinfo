@@ -1,1 +1,8 @@
 /* css styles */
+
+/* Command output blocks in the Software Carpentry lesson material */
+pre.output {
+  background-color: #f7f7f7;
+  border-left: 4px solid #adb5bd;
+  padding: 0.5em 1em;
+}
