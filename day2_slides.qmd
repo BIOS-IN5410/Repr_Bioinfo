@@ -35,8 +35,8 @@ format:
 :::: {.columns}
 
 ::: {.column width="80%"}
-- Associate Teaching professor, Dept. of Biosciences
-- Topics: Programming, Bioinformatics, Pedagogy
+- Teaching professor ('Dosent'), Dept. of Biosciences
+- Topics: Programming, Bioinformatics
 - Teaching
   - BIOS1101 – Introduction to computational models for Biosciences
   - Other bioinformatics courses
